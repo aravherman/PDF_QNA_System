@@ -1,0 +1,4 @@
+pdf_name,question,expected_answer
+NLP_Notes.pdf,"What is Natural Language Processing?","Natural Language Processing is a branch of artificial intelligence"
+NLP_Notes.pdf,"What is machine learning?","Machine learning is a subset of artificial intelligence"
+NLP_Notes.pdf,"What is deep learning?","Deep learning is a subset of machine learning"

@@ -1,0 +1,12 @@
+streamlit
+pymupdf
+nltk
+spacy
+sentence-transformers
+faiss-cpu
+transformers<5
+torch
+pandas
+numpy
+scikit-learn
+matplotlib
