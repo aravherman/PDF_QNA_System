@@ -1,17 +1,21 @@
-import fitz
+import os
+import pymupdf as fitz
 
 
 def extract_text_from_pdf(uploaded_file):
     """
-    Extract text from an uploaded PDF.
+    Extract text from an uploaded PDF (supports both file paths and file-like objects).
 
     Returns:
         list: Each item contains PDF name, page number and page text.
     """
-
-    pdf_bytes = uploaded_file.read()
-
-    document = fitz.open(stream=pdf_bytes, filetype="pdf")
+    if isinstance(uploaded_file, str):
+        file_name = os.path.basename(uploaded_file)
+        document = fitz.open(uploaded_file)
+    else:
+        file_name = getattr(uploaded_file, "name", "document.pdf")
+        pdf_bytes = uploaded_file.read()
+        document = fitz.open(stream=pdf_bytes, filetype="pdf")
 
     pages = []
 
@@ -20,7 +24,7 @@ def extract_text_from_pdf(uploaded_file):
 
         if text.strip():
             pages.append({
-                "pdf_name": uploaded_file.name,
+                "pdf_name": file_name,
                 "page_number": page_number,
                 "text": text.strip()
             })
