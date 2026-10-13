@@ -24,7 +24,7 @@ from src.qa_model import (
 
 st.set_page_config(
     page_title="PDF Question Answering System",
-    page_icon="📚",
+    # page_icon="📚",
     layout="wide"
 )
 
@@ -59,7 +59,7 @@ if "qa_model" not in st.session_state:
 # Title
 # --------------------------------------------------
 
-st.title("📚 PDF Question Answering System")
+st.title("PDF Question Answering System")
 
 st.write(
     "Upload one or more PDF documents and ask questions "
